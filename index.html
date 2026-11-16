@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Frost Rust</title>
+<meta name="description" content="Frost Rust, the first PvP client written in Rust, is coming soon to Frost Lite."/>
+<meta name="theme-color" content="#0b0806"/>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500&family=Onest:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="soon-page">
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Frost Rust">
+      <img src="rust_logo.png" alt="" width="34" height="34">
+      <span>Frost <b>Rust</b></span>
+    </a>
+    <a class="nav-cta" href="https://discord.gg/Kn8ydsABU8" rel="noopener">Join Discord</a>
+  </div>
+</header>
+<main class="stage" id="top">
+  <canvas class="pixels" id="pixels" aria-hidden="true"></canvas>
+  <section class="soon" aria-label="Frost Rust is coming soon">
+    <div class="logo-wrap">
+      <img class="logo" id="logo" src="rust_logo.png" width="1024" height="1024" alt="Frost Rust logo">
+    </div>
+    <div class="soon-word" id="soonWord" role="img" aria-label="Soon"></div>
+    <h1 class="soon-title" id="soonTitle">First PvP client written in <span class="hl">Rust.</span></h1>
+    <div class="count" id="count" data-to="2026-11-20T18:00:00+01:00" role="timer" aria-label="Time until release">
+      <div class="count-cell"><b data-unit="d">0</b><span class="label">Days</span></div>
+      <div class="count-cell"><b data-unit="h">00</b><span class="label">Hours</span></div>
+      <div class="count-cell"><b data-unit="m">00</b><span class="label">Minutes</span></div>
+      <div class="count-cell"><b data-unit="s">00</b><span class="label">Seconds</span></div>
+    </div>
+    <p class="count-note" id="countNote">Releasing Friday, 20 November</p>
+    <div class="hero-actions">
+      <a class="btn btn-main" href="https://discord.gg/Kn8ydsABU8" rel="noopener">Get notified on Discord</a>
+      <a class="btn btn-line" href="https://store.frostclient.eu/lite">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2h2v2h2v2h2v2h-2v2h-2v2h-2v-2h-2V8H8V6h2V4h2zm-8 12h2v2h2v2h2v2H8v-2H6v-2H4zm14 0h2v2h-2v2h-2v2h-2v-2h2v-2h2z" fill="currentColor"/></svg>
+        <span>See Frost Lite</span>
+      </a>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="foot-top">
+    <p class="credit"><span class="label">Frost Rust</span><span>Frost, rebuilt as native code.</span></p>
+    <nav class="foot-links" aria-label="Frost links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="imprint.html">Imprint</a>
+      <a href="https://discord.gg/Kn8ydsABU8" rel="noopener">Discord</a>
+      <a href="https://frostclient.eu">frostclient.eu</a>
+    </nav>
+  </div>
+  <div class="foot-bottom"><span>© Frost 2026. All rights reserved.</span><span>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span></div>
+</footer>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="page.js"></script>
+<script src="soon.js"></script>
+</body>
+</html>
