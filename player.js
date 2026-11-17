@@ -69,6 +69,7 @@
   });
   video.addEventListener('ended', function () {
     player.classList.remove('playing');
+    unfocus();
     big.setAttribute('aria-label', 'Replay teaser');
     wake();
   });
@@ -80,10 +81,57 @@
     if (!dragging) paint();
   });
   video.addEventListener('progress', paintBuffer);
+  var vol = document.getElementById('playerVol'), volPct = document.getElementById('playerVolPct');
+  var dim = document.getElementById('teaserDim'), watch = document.getElementById('watchTeaser');
+  function paintVol() {
+    var v = video.muted ? 0 : Math.round(video.volume * 100);
+    vol.value = String(v);
+    vol.style.setProperty('--vol', v + '%');
+    volPct.textContent = v + '%';
+    vol.setAttribute('aria-valuetext', v + ' percent');
+  }
+  try {
+    var saved = localStorage.getItem('frostTeaserVolume');
+    if (saved !== null && isFinite(+saved)) video.volume = Math.min(1, Math.max(0, +saved / 100));
+  } catch (e) {}
+  vol.addEventListener('input', function () {
+    var v = +vol.value;
+    video.volume = v / 100;
+    video.muted = v === 0;
+    try { localStorage.setItem('frostTeaserVolume', String(v)); } catch (e) {}
+  });
   video.addEventListener('volumechange', function () {
     var m = video.muted || video.volume === 0;
     player.classList.toggle('muted', m);
     mute.setAttribute('aria-label', m ? 'Unmute' : 'Mute');
+    paintVol();
+  });
+  paintVol();
+  function unfocus() {
+    document.body.classList.remove('teaser-focus');
+    window.removeEventListener('scroll', onScroll);
+  }
+  function onScroll() {
+    var r = player.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) unfocus();
+  }
+  if (watch) watch.addEventListener('click', function (e) {
+    e.preventDefault();
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (video.muted && +vol.value > 0) video.muted = false;
+    if (video.ended) video.currentTime = 0;
+    play();
+    document.body.classList.add('teaser-focus');
+    player.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+    try { history.replaceState(null, '', '#teaser'); } catch (e2) {}
+    setTimeout(function () {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      player.focus({ preventScroll: true });
+    }, reduced ? 0 : 900);
+  });
+  dim.addEventListener('click', unfocus);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.body.classList.contains('teaser-focus') && !isFull()) unfocus();
   });
   video.addEventListener('click', togglePlay);
   video.addEventListener('dblclick', toggleFull);

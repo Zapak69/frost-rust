@@ -41,7 +41,7 @@
     <p class="count-note" id="countNote">Releasing Friday, 20 November</p>
     <div class="hero-actions">
       <a class="btn btn-main" href="https://discord.gg/Kn8ydsABU8" rel="noopener">Get notified on Discord</a>
-      <a class="btn btn-line" href="#teaser">
+      <a class="btn btn-line" href="#teaser" id="watchTeaser">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h2v2h3v2h3v2h3v4h-3v2h-3v2h-3v2H6z" fill="currentColor"/></svg>
         <span>Watch teaser</span>
       </a>
@@ -55,6 +55,7 @@
 <section class="teaser" id="teaser" aria-labelledby="teaserTitle">
   <p class="label">Teaser</p>
   <h2 class="teaser-title" id="teaserTitle">See it in <span class="hl">motion.</span></h2>
+  <div class="teaser-dim" id="teaserDim" aria-hidden="true"></div>
   <div class="player" id="player" tabindex="-1">
     <video class="player-video" id="playerVideo" src="teaser.mp4#t=0.1" preload="metadata" playsinline></video>
     <button type="button" class="player-big" id="playerBig" aria-label="Play teaser"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h2v2h3v2h3v2h3v4h-3v2h-3v2h-3v2H6z" fill="currentColor"/></svg></button>
@@ -63,7 +64,7 @@
       <span class="player-time" id="playerTime">0:00</span>
       <div class="player-track" id="playerTrack" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player-buffer" id="playerBuffer"></div><div class="player-fill" id="playerFill"></div><div class="player-knob" id="playerKnob"></div></div>
       <span class="player-time" id="playerDur">0:00</span>
-      <button type="button" class="player-btn" id="playerMute" aria-label="Mute"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l2-2h2v10H9l-2-2H3z" fill="currentColor"/><path class="i-vol" d="M14 9h2v6h-2zm3-3h2v12h-2z" fill="currentColor"/><path class="i-muted" d="M14 9h2v2h2V9h2v2h-2v2h2v2h-2v-2h-2v2h-2v-2h2v-2h-2z" fill="currentColor"/></svg></button>
+      <div class="player-vol"><button type="button" class="player-btn" id="playerMute" aria-label="Mute"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l2-2h2v10H9l-2-2H3z" fill="currentColor"/><path class="i-vol" d="M14 9h2v6h-2zm3-3h2v12h-2z" fill="currentColor"/><path class="i-muted" d="M14 9h2v2h2V9h2v2h-2v2h2v2h-2v-2h-2v2h-2v-2h2v-2h-2z" fill="currentColor"/></svg></button><input type="range" class="player-vol-range" id="playerVol" min="0" max="100" step="5" value="100" aria-label="Volume"><span class="player-vol-pct" id="playerVolPct">100%</span></div>
       <button type="button" class="player-btn" id="playerFull" aria-label="Fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h6v2H5v4H3zm12 0h6v6h-2V5h-4zM3 15h2v4h4v2H3zm16 0h2v6h-6v-2h4z" fill="currentColor"/></svg></button>
     </div>
   </div>
