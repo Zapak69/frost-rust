@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>FrostClient Rust | Coming Soon</title>
-<meta name="description" content="FrostClient Rust, the first PvP client written in Rust, is coming soon to Frost Lite."/>
+<title>FrostClient Rust | The First PvP Client Written in Rust</title>
+<meta name="description" content="FrostClient Rust is the first PvP client written in Rust: native code, no Java, the Frost mods and HUD you know."/>
 <meta name="theme-color" content="#0b0806"/>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -14,65 +14,156 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500&family=Onest:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="soon-page">
+<body>
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a class="brand" href="/" aria-label="FrostClient Rust">
+    <a class="brand" href="#top" aria-label="FrostClient Rust, back to top">
       <img src="rust_logo.png" alt="" width="34" height="34">
       <span>FrostClient <b>Rust</b></span>
     </a>
-    <a class="nav-cta" href="https://discord.gg/Kn8ydsABU8" rel="noopener">Join Discord</a>
+    <nav class="nav-links" aria-label="Sections">
+      <span class="nav-mark" aria-hidden="true"></span>
+      <a href="#why" data-section="why">Why Rust</a>
+      <a href="#view" data-section="view">View</a>
+      <a href="#fps" data-section="fps">FPS</a>
+      <a href="#tour" data-section="tour">Tour</a>
+    </nav>
+    <a class="nav-cta" href="https://store.frostclient.eu/lite">Get Lite</a>
   </div>
 </header>
-<main class="stage" id="top">
-  <canvas class="pixels" id="pixels" aria-hidden="true"></canvas>
-  <section class="soon" aria-label="FrostClient Rust is coming soon">
-    <div class="logo-wrap">
-      <img class="logo" id="logo" src="rust_logo.png" width="1024" height="1024" alt="FrostClient Rust logo">
-    </div>
-    <div class="soon-word" id="soonWord" role="img" aria-label="Soon"></div>
-    <h1 class="soon-title" id="soonTitle">First PvP client written in <span class="hl">Rust.</span></h1>
-    <div class="count" id="count" data-to="2026-11-20T18:00:00+01:00" role="timer" aria-label="Time until release">
-      <div class="count-cell"><b data-unit="d">0</b><span class="label">Days</span></div>
-      <div class="count-cell"><b data-unit="h">00</b><span class="label">Hours</span></div>
-      <div class="count-cell"><b data-unit="m">00</b><span class="label">Minutes</span></div>
-      <div class="count-cell"><b data-unit="s">00</b><span class="label">Seconds</span></div>
-    </div>
-    <p class="count-note" id="countNote">Releasing Friday, 20 November</p>
-    <div class="hero-actions">
-      <a class="btn btn-main" href="https://discord.gg/Kn8ydsABU8" rel="noopener">Get notified on Discord</a>
-      <a class="btn btn-line" href="#teaser" id="watchTeaser">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h2v2h3v2h3v2h3v4h-3v2h-3v2h-3v2H6z" fill="currentColor"/></svg>
-        <span>Watch teaser</span>
-      </a>
-      <a class="btn btn-line" href="https://store.frostclient.eu/lite">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2h2v2h2v2h2v2h-2v2h-2v2h-2v-2h-2V8H8V6h2V4h2zm-8 12h2v2h2v2h2v2H8v-2H6v-2H4zm14 0h2v2h-2v2h-2v2h-2v-2h2v-2h2z" fill="currentColor"/></svg>
-        <span>See Frost Lite</span>
-      </a>
+
+<main id="top">
+  <section class="stage" id="hero" aria-label="FrostClient Rust">
+    <canvas class="pixels" id="pixels" aria-hidden="true"></canvas>
+    <div class="hero">
+      <div class="logo-wrap">
+        <img class="logo" id="logo" src="rust_logo.png" width="1024" height="1024" alt="FrostClient Rust logo">
+      </div>
+      <h1 class="hero-title" id="heroTitle">The first PvP client written in <span class="hl">Rust.</span></h1>
+      <div class="hero-foot">
+      <p class="hero-sub">Frost, rebuilt as native code. No Java underneath, no stutter in the middle of a fight.</p>
+      <div class="hero-actions">
+        <a class="btn btn-main" href="https://store.frostclient.eu/lite">Get Frost Lite</a>
+        <a class="btn btn-line js-dl" href="https://cdn.frostclient.eu/get/Frost-Launcher-win.exe">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10h2v-2h2v2h-2v2h-2v2h-2v-2H9v-2H7v-2h2v2h2zM5 19h14v2H5z" fill="currentColor"/></svg>
+          <span>I have Lite</span>
+        </a>
+      </div>
+      <p class="hero-note">FrostClient Rust is part of the Frost Lite subscription.</p>
+      </div>
     </div>
   </section>
-</main>
-<section class="teaser" id="teaser" aria-labelledby="teaserTitle">
-  <p class="label">Teaser</p>
-  <h2 class="teaser-title" id="teaserTitle">See it in <span class="hl">motion.</span></h2>
-  <div class="teaser-dim" id="teaserDim" aria-hidden="true"></div>
-  <div class="player" id="player" tabindex="-1">
-    <video class="player-video" id="playerVideo" src="teaser.mp4#t=0.1" preload="metadata" playsinline></video>
-    <button type="button" class="player-big" id="playerBig" aria-label="Play teaser"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h2v2h3v2h3v2h3v4h-3v2h-3v2h-3v2H6z" fill="currentColor"/></svg></button>
-    <div class="player-bar">
-      <button type="button" class="player-btn" id="playerToggle" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M6 4h2v2h3v2h3v2h3v4h-3v2h-3v2h-3v2H6z" fill="currentColor"/><path class="i-pause" d="M6 5h4v14H6zm8 0h4v14h-4z" fill="currentColor"/></svg></button>
-      <span class="player-time" id="playerTime">0:00</span>
-      <div class="player-track" id="playerTrack" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player-buffer" id="playerBuffer"></div><div class="player-fill" id="playerFill"></div><div class="player-knob" id="playerKnob"></div></div>
-      <span class="player-time" id="playerDur">0:00</span>
-      <div class="player-vol"><button type="button" class="player-btn" id="playerMute" aria-label="Mute"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l2-2h2v10H9l-2-2H3z" fill="currentColor"/><path class="i-vol" d="M14 9h2v6h-2zm3-3h2v12h-2z" fill="currentColor"/><path class="i-muted" d="M14 9h2v2h2V9h2v2h-2v2h2v2h-2v-2h-2v2h-2v-2h2v-2h-2z" fill="currentColor"/></svg></button><input type="range" class="player-vol-range" id="playerVol" min="0" max="100" step="5" value="100" aria-label="Volume"><span class="player-vol-pct" id="playerVolPct">100%</span></div>
-      <button type="button" class="player-btn" id="playerFull" aria-label="Fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h6v2H5v4H3zm12 0h6v6h-2V5h-4zM3 15h2v4h4v2H3zm16 0h2v6h-6v-2h4z" fill="currentColor"/></svg></button>
+
+  <section class="why" id="why">
+    <p class="label">Rust vs Java</p>
+    <h2 class="split">Everything Java made you wait for is gone.</h2>
+    <p class="why-sub">The same Frost mods and HUD, without the Java virtual machine underneath. That changes more than the frame counter.</p>
+    <div class="why-grid">
+      <article class="perk perk-big">
+        <p class="perk-stat"><span class="num" data-to="5">5</span><span class="unit">s</span></p>
+        <h3>From Play to the menu.</h3>
+        <p>FrostClient Rust starts in under five seconds. There is no Java to boot, no mod loader and no hundreds of jars to scan before you see the menu.</p>
+        <p class="vs"><span>Java version</span>JVM start, Fabric and every mod loading first</p>
+      </article>
+      <article class="perk perk-big">
+        <p class="perk-stat"><span class="num" data-to="5">5</span><span class="unit">s</span></p>
+        <h3>To a brand new world.</h3>
+        <p>World generation is native code on every core, so creating a world and stepping into it takes about as long as opening the game.</p>
+        <p class="vs"><span>Java version</span>Waiting on the world generation screen</p>
+      </article>
+      <article class="perk">
+        <svg class="perk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h4v-3h3v-3h3V9h3V6h3V3h4v4h-3v3h-3v3h-3v3H9v3H6v3H2z" fill="currentColor"/></svg>
+        <h3>Higher render distance, smaller cost.</h3>
+        <p>Chunks are built in parallel and drawn in large batches, so you see further for fewer frames than the same distance costs on Java.</p>
+      </article>
+      <article class="perk">
+        <svg class="perk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h4V5h2v6h2V3h2v8h2V7h2v4h4v2h-4v4h-2v-4h-2v8h-2v-8H9v6H7v-6H3z" fill="currentColor"/></svg>
+        <h3>No garbage collector stutter.</h3>
+        <p>Java pauses to clean up memory, often mid-fight. Rust frees memory as it goes, so frame times stay flat.</p>
+      </article>
+      <article class="perk">
+        <svg class="perk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zm2 2v8h2V8zm4 0v8h2V8zm4 0v8h2V8zM2 9h2v2H2zm0 4h2v2H2zm18-4h2v2h-2zm0 4h2v2h-2z" fill="currentColor"/></svg>
+        <h3>Less RAM, nothing to tune.</h3>
+        <p>No heap to reserve up front and no memory slider to guess. The game takes the memory it actually needs.</p>
+      </article>
+      <article class="perk">
+        <svg class="perk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10h2v-2h2v2h-2v2h-2v2h-2v-2H9v-2H7v-2h2v2h2zM5 19h14v2H5z" fill="currentColor"/></svg>
+        <h3>One small download.</h3>
+        <p>About 45 MB for the whole client. Java only prepares the vanilla files once; it never runs while you play.</p>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="view" id="view">
+    <p class="label">Render distance</p>
+    <h2 class="split">See the whole valley, not the fog.</h2>
+    <p class="view-sub">Same mountain, same moment. Drag the handle to compare 64 chunks on FrostClient Rust with the 16 chunks most Java players can afford.</p>
+    <div class="compare" id="compare" style="--cut:50%">
+      <img class="compare-img" src="img/rd-rust.jpg" width="1920" height="1080" alt="View from a snowy peak at 64 chunks: lakes, autumn forests and hills to the horizon">
+      <div class="compare-top"><img class="compare-img" src="img/rd-java.jpg" width="1920" height="1080" alt="The same view at 16 chunks: the land ends in fog close to the mountain"></div>
+      <span class="compare-tag tag-java"><b>16 chunks</b>Java</span>
+      <span class="compare-tag tag-rust"><b>64 chunks</b>FrostClient Rust</span>
+      <div class="compare-line" aria-hidden="true"><span class="compare-knob"><svg viewBox="0 0 24 24"><path d="M9 6H7v2H5v2H3v4h2v2h2v2h2zm6 0v12h2v-2h2v-2h2v-4h-2V8h-2V6z" fill="currentColor"/></svg></span></div>
+      <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare 16 and 64 chunks">
+    </div>
+  </section>
+
+  <section class="fps" id="fps">
+    <p class="label">Frames per second</p>
+    <h2 class="split">More frames than anything we have shipped.</h2>
+    <div class="chart" role="img" aria-label="Average FPS on the same PC: Vanilla 170, other PvP clients 250, Frost 500, Frost Lite 950, FrostClient Rust 1300">
+      <div class="row" data-fps="170"><span class="name">Vanilla</span><div class="blocks"></div><span class="val"><b>170</b></span></div>
+      <div class="row" data-fps="250"><span class="name">Other clients</span><div class="blocks"></div><span class="val"><b>250</b></span></div>
+      <div class="row row-frost" data-fps="500"><span class="name">Frost</span><div class="blocks"></div><span class="val"><b>500</b></span></div>
+      <div class="row row-lite" data-fps="950"><span class="name">Frost Lite</span><div class="blocks"></div><span class="val"><b>950</b></span></div>
+      <div class="row row-rust" data-fps="1300"><span class="name">FrostClient Rust</span><div class="blocks"></div><span class="val"><b>1300</b></span></div>
+    </div>
+    <p class="rig">Same PC for every bar: RTX 3060 Ti, Intel Core i7 (11th gen), 6 GB RAM.</p>
+  </section>
+
+  <section class="tour-stage" id="tour" aria-label="FrostClient Rust tour">
+    <div class="tour">
+      <figure class="frame" data-step="0">
+        <img src="img/world.jpg" width="1920" height="1080" alt="Standing on a snowy peak with the Frost HUD: ping, CPS, coordinates, minimap, keystrokes and armour status">
+        <figcaption><span class="label">01 · HUD</span><strong>Your HUD, same as always.</strong><span>Keystrokes, CPS, coordinates, armour, ping and the minimap, in the spots you put them.</span></figcaption>
+      </figure>
+      <figure class="frame" data-step="1">
+        <img src="img/mods.jpg" width="1920" height="1080" alt="Frost mod menu in grid view">
+        <figcaption><span class="label">02 · Right Shift</span><strong>The menu you know.</strong><span>Right Shift opens the Frost mod menu with search, filters, and grid or list view.</span></figcaption>
+      </figure>
+      <figure class="frame" data-step="2">
+        <img src="img/zoom.jpg" width="1920" height="1080" alt="Zoom mod settings page with sliders and a keybind">
+        <figcaption><span class="label">03 · Settings</span><strong>Tune every mod.</strong><span>Sliders, switches, colours and keybinds for each mod, saved just like in Frost.</span></figcaption>
+      </figure>
+      <figure class="frame" data-step="3">
+        <img src="img/friends.jpg" width="1920" height="1080" alt="Frost friends list with a party, online friends and a chat">
+        <figcaption><span class="label">04 · Friends</span><strong>Friends and parties, built in.</strong><span>See who is online and where, chat, start a party and pull everyone onto the same server.</span></figcaption>
+      </figure>
+      <div class="tiles" aria-hidden="true"></div>
+      <div class="tour-progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="get" id="get">
+    <img class="get-logo" src="rust_logo.png" width="1024" height="1024" alt="">
+    <h2 class="split">Included with Frost Lite.</h2>
+    <p>FrostClient Rust is only for Frost Lite subscribers. Get Lite, download the Frost Launcher, sign in with the same Discord account and pick FrostClient Rust from the version list.</p>
+    <div class="get-actions">
+      <a class="btn btn-main btn-big magnet" href="https://store.frostclient.eu/lite">Get Frost Lite</a>
+      <a class="btn btn-line btn-big js-dl" href="https://cdn.frostclient.eu/get/Frost-Launcher-win.exe">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10h2v-2h2v2h-2v2h-2v2h-2v-2H9v-2H7v-2h2v2h2zM5 19h14v2H5z" fill="currentColor"/></svg>
+        <span class="js-dl-label">Download for Windows</span>
+      </a>
+    </div>
+    <p class="os"><span>Launcher for</span><a href="https://cdn.frostclient.eu/get/Frost-Launcher-win.exe">Windows</a><a href="https://cdn.frostclient.eu/get/Frost-Launcher-mac.dmg">macOS</a><a href="https://cdn.frostclient.eu/get/Frost-Launcher-linux.AppImage">Linux</a></p>
+  </section>
+</main>
+
 <footer class="foot">
   <div class="foot-top">
     <p class="credit"><span class="label">FrostClient Rust</span><span>Frost, rebuilt as native code.</span></p>
     <nav class="foot-links" aria-label="Frost links">
+      <a href="/developer">Developers</a>
       <a href="/terms">Terms of Service</a>
       <a href="/privacy">Privacy Policy</a>
       <a href="/imprint">Imprint</a>
@@ -85,8 +176,8 @@
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/SplitText.min.js"></script>
+<div class="wipe" aria-hidden="true"></div>
 <script src="page.js"></script>
-<script src="soon.js"></script>
-<script src="player.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

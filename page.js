@@ -27,6 +27,11 @@
   var nav = document.getElementById('nav');
   gsap.from('.nav-inner > *', { yPercent: -160, opacity: 0, duration: 0.9, stagger: 0.12, ease: 'back.out(1.6)', delay: 0.15, clearProps: 'transform,opacity' });
   ScrollTrigger.create({ start: 60, end: 'max', onToggle: function (s) { nav.classList.toggle('compact', s.isActive); } });
+  var shown = true;
+  ScrollTrigger.create({ start: 400, end: 'max', onUpdate: function (s) {
+    var show = s.direction < 0;
+    if (show !== shown) { shown = show; gsap.to(nav, { yPercent: show ? 0 : -140, duration: 0.4, ease: show ? 'power3.out' : 'power2.in', overwrite: true }); }
+  }, onLeaveBack: function () { shown = true; gsap.to(nav, { yPercent: 0, duration: 0.35, overwrite: true }); } });
   var mark = document.querySelector('.nav-mark');
   if (mark) {
     var markTo = function (id) {
