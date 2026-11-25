@@ -40,6 +40,7 @@ a{color:inherit}
 .hero-sub{margin-top:22px;max-width:44ch;color:var(--muted);font-size:clamp(16px,1.5vw,19px)}
 .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px}
 .hero-note{margin-top:16px;font-size:14px;color:var(--muted)}
+.hero-badge{margin-bottom:18px}
 .tour{display:flex;flex-direction:column;gap:56px;padding:40px var(--gutter) 80px;max-width:1280px;margin:0 auto}
 .frame{position:relative}
 .frame img{width:100%;aspect-ratio:16/9;object-fit:cover;border:2px solid var(--edge);box-shadow:0 10px 0 #000}

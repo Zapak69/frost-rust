@@ -46,6 +46,7 @@
   var intro = gsap.timeline({ delay: 0.15 });
   intro.to(cover.children, { scale: 0, duration: 0.35, ease: 'power2.in', stagger: { each: 0.012, from: 'random' } })
     .from(logo, { scale: 0.6, rotate: -8, duration: 1, ease: 'elastic.out(1,0.6)' }, 0.1)
+    .from('.hero-badge', { y: -14, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.3)
     .from(title.chars, { yPercent: 110, opacity: 0, duration: 0.6, ease: 'back.out(2)', stagger: 0.018 }, 0.35)
     .from('.hero-sub, .hero-actions, .hero-note', { y: 24, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out' }, 0.85)
     .add(function () { cover.remove(); });
